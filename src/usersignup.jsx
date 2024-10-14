@@ -1,10 +1,12 @@
 
 import { Container, FloatingLabel, Form, Row,Col,Button } from "react-bootstrap";
+import Headernav from "./headernav";
 
 
 export default function Signup(){
     return(
         <>
+        <Headernav/>
           <Container>
             <Row className="justify-content-center">
                 <Col lg={12}>
