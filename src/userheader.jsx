@@ -4,13 +4,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { GiAbstract097 } from "react-icons/gi";
 import Loginmodal from './loginmodal';
-import { Button } from 'react-bootstrap';
+
+import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 
 function UserHeader() {
     const nav=useNavigate()
   return (
-    <Navbar expand="lg" bg="primary" data-bs-theme="dark">
+    <Navbar expand="lg" bg="light" data-bs-theme="light">
       <Container>
         <Navbar.Brand href="#home"><GiAbstract097 /> EmShoppi</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -18,10 +19,7 @@ function UserHeader() {
           <Nav className="me-auto">
             <Nav.Link href="/userhome">Home</Nav.Link>
             <Nav.Link href="/userhome/cart">Cart</Nav.Link>
-            <Button variant='danger' onClick={()=>{
-                alert("Logout")
-                 nav("/")  
-            }}> Logout </Button>
+           
            
             <NavDropdown title="Menu" id="basic-nav-dropdown">
               <NavDropdown.Item href="/about">Product Purchased</NavDropdown.Item>
@@ -36,8 +34,14 @@ function UserHeader() {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
+        
       </Container>
+      <Button variant='outlined' onClick={()=>{
+                alert("Logout")
+                 nav("/")  
+            }}> Logout </Button>
     </Navbar>
+    
   );
 }
 

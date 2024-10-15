@@ -1,6 +1,7 @@
 
 import { Container, FloatingLabel, Form, Row,Col,Button } from "react-bootstrap";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useState,useRef,useEffect } from "react";
 import {useNavigate} from 'react-router-dom'
 export default function Login(){
@@ -19,7 +20,11 @@ export default function Login(){
         console.log(login)
         if(login.email=="example@gmail.com" && login.password=="123"){
             console.log("login success")
-            nav("/userhome")
+            toast.success("🎉login success")
+            window.setTimeout(()=>{
+                nav("/userhome")
+            },2000)
+          
         }
         else{
             console.log("Not Success")
@@ -56,6 +61,12 @@ export default function Login(){
                 </Col>
             </Row>
             </Container>
+            <ToastContainer
+            position="top-center"
+            theme="colored"
+            >
+
+            </ToastContainer>
         
         </>
     )
